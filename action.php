@@ -76,4 +76,4 @@ class action_plugin_idsapi extends DokuWiki_Action_Plugin {
     }  
     
 }
-// vim:ts=4:sw=4:et:
+
