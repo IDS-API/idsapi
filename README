@@ -1,5 +1,10 @@
 ====== IDS API Plugin for DokuWiki ======
 
+
+just put the idsapi folder in your dokuwiki plugin folder and active it.
+
+The "idsapi" plugin has a dependency with the "tag" dokuwiki plugin.
+
 All documentation for the IDS API Plugin is available online at:
 
   * http://dokuwiki.org/plugin:idsapi
