@@ -1,0 +1,7 @@
+base   idsapi
+author Daniele Centamore
+email  daniele.centamore@gmail.com
+date   2013-06-01
+name   idsapi plugin
+desc   IDS API client
+url    http://dokuwiki.org/plugin:idsapi
