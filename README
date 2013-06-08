@@ -1,4 +1,8 @@
-====== Tag Plugin for DokuWiki ======
+====== IDSAPI Plugin for DokuWiki ======
+
+just put the idsapi folder in your dokuwiki plugin folder and active it.
+
+the "idsapi" plugin has a dependency with the "tag" plugin. 
 
 All documentation for the Tag Plugin is available online at:
 
