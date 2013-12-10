@@ -1,12 +1,23 @@
 ====== IDSAPI Plugin for DokuWiki ======
 
-just put the idsapi folder in your dokuwiki plugin folder and active it.
+Just copy the idsapi folder in your dokuwiki plugin folder and activate it.
 
-the "idsapi" plugin has a dependency with the "tag" plugin. 
+The "idsapi" plugin has a dependency on the "tag" plugin (See below). 
+
+The tag plugin allows the addition of tags to docuwiki pages.
+Clicking on the tags shows a page which lists all docuwiki pages which have that tag.
+
+Installing the plugin extends the tag plug so that list of matching pages is followed by a list of items from the IDS KS OpenAPI.
+
+For more information on the OpenAPI see http://api.ids.ac.uk
+To set up an OpenAPI key, visit http://api.ids.ac.uk/accounts/register
+
+The query sent to the OpenAPI is a free text search.
+
 
 All documentation for the Tag Plugin is available online at:
 
-  * http://dokuwiki.org/plugin:idsapi
+  * http://dokuwiki.org/plugin:tag
 
 (c) 2012 - 2013 by Daniele Centamore <daniele.centamore@gmail.com>
 See COPYING for license info.
