@@ -10,9 +10,7 @@ require_once(dirname(__FILE__) .'/IdsAbstractHelper.php');
 
 class IdsDefaultHelper extends IdsAbstractHelper  {
 
-        
-        
-      public function __construct( $tag, $uri, $current, $key ) {
+      public function __construct( $tag, $uri, $current, $url, $key, $site ) {
           /**
            * set default values
            */  
@@ -25,7 +23,8 @@ class IdsDefaultHelper extends IdsAbstractHelper  {
           $this->idsapi->setObjectType('documents');
           $this->idsapi->setSortOrder('publication_date');
           $this->idsapi->setFormat('full');
-          $this->idsapi->setSite('eldis');
+          $this->idsapi->setSite($site);
+          $this->idsapi->setUrl($url);
           $this->idsapi->setSearchParam('q', $tag);
           $this->uri = $uri;
           return $this;

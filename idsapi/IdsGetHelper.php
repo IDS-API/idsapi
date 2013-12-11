@@ -11,7 +11,7 @@ require_once(dirname(__FILE__) .'/IdsAbstractHelper.php');
 class IdsGetHelper extends IdsAbstractHelper  {
 
         
-      public function __construct( $object_id, $uri, $key ) {
+      public function __construct( $object_id, $uri, $url, $key, $site ) {
           /**
            * create a IdsAPI instance and set default values
            */
@@ -22,7 +22,8 @@ class IdsGetHelper extends IdsAbstractHelper  {
           $this->idsapi->setObjectId($object_id);
           $this->idsapi->setFormat('full');
           $this->idsapi->setSortOrder('date_created');
-          $this->idsapi->setSite('eldis');
+          $this->idsapi->setSite($site);
+          $this->idsapi->setUrl($url);
           $this->uri = $uri;
           return $this;
       }      

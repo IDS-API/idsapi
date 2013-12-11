@@ -16,22 +16,22 @@ class IdsHelperFactory  {
        /**
         * @return IdsDefaultHelper object
         */
-      public static function createDefaultHelper( $tag, $uri, $current_page, $key){
-            return new IdsDefaultHelper( $tag, $uri, $current_page, $key);
+      public static function createDefaultHelper( $tag, $uri, $current_page, $url, $key, $site){
+            return new IdsDefaultHelper( $tag, $uri, $current_page, $url, $key, $site);
       } 
       
       /**
         * @return IdsAllHelper object
         */
-      public static function createAllHelper( $tag, $uri, $current_page, $key){
-            return new IdsAllHelper( $tag, $uri, $current_page, $key);
+      public static function createAllHelper( $tag, $uri, $current_page, $url, $key, $site){
+            return new IdsAllHelper( $tag, $uri, $current_page, $url, $key, $site);
       } 
       
       /**
         * @return IdsGetHelper object
         */
-      public static function createGetHelper( $object_id, $uri, $key){
-            return new IdsGetHelper( $object_id, $uri, $key);
+      public static function createGetHelper( $object_id, $uri, $url, $key, $site){
+            return new IdsGetHelper( $object_id, $uri, $url, $key, $site);
       } 
 
 

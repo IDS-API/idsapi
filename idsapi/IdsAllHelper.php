@@ -12,7 +12,7 @@ class IdsAllHelper extends IdsAbstractHelper {
 
 
     
-      public function __construct( $tag, $uri, $current, $key ) {
+      public function __construct( $tag, $uri, $current, $url, $key, $site ) {
           /**
            * set default values
            */          
@@ -24,7 +24,8 @@ class IdsAllHelper extends IdsAbstractHelper {
           $this->idsapi->setObjectType('documents');
           $this->idsapi->setFormat('short');
           $this->idsapi->setSortOrder('publication_date');
-          $this->idsapi->setSite('eldis');
+          $this->idsapi->setSite($site);
+          $this->idsapi->setUrl($url);
           $this->idsapi->setSearchParam('q', $tag);
           $this->uri = $uri;
           return $this;

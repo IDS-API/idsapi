@@ -11,19 +11,19 @@ require_once(dirname(__FILE__) .'/IdsHelperFactory.php');
 class IdsHelperFacade  {
 
     
-    public static function getHelper($_REQUEST, $_SERVER, $key){
+    public static function getHelper($_REQUEST, $_SERVER, $url, $key, $site){
         
          if($_REQUEST['ids_action']=='get_all'){ 
              
-             $idshelper = IdsHelperFactory::createAllHelper( $_REQUEST['tag'], $_SERVER["REQUEST_URI"], $_REQUEST['ids_page'], $key);
+             $idshelper = IdsHelperFactory::createAllHelper( $_REQUEST['tag'], $_SERVER["REQUEST_URI"], $_REQUEST['ids_page'], $url, $key, $site);
          
          } else if($_REQUEST['ids_action']=='get_one') {
              
-             $idshelper = IdsHelperFactory::createGetHelper($_REQUEST['ID'],null, $key);
+             $idshelper = IdsHelperFactory::createGetHelper($_REQUEST['ID'],null, $url, $key, $site);
              
          } else {
              
-             $idshelper = IdsHelperFactory::createDefaultHelper($_REQUEST['tag'],$_SERVER["REQUEST_URI"],$_REQUEST['ids_page'], $key);
+             $idshelper = IdsHelperFactory::createDefaultHelper($_REQUEST['tag'],$_SERVER["REQUEST_URI"],$_REQUEST['ids_page'], $url, $key, $site);
              
          } 
          

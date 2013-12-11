@@ -55,7 +55,13 @@ abstract class IdsAbstractHelper  {
          $this->idsapi->setSite($v);
      }
      
-    
+     /**
+      * set url for api endpoint
+      */ 
+     protected function setUrl($v){
+         $this->idsapi->setUrl($v);
+     }
+
      public function getObject(){
          return $this->idsapi;
      }
@@ -68,8 +74,7 @@ abstract class IdsAbstractHelper  {
          
             $response = $this->idsapi->makeRequest();
             $response->htmlShortListObjects($this->uri);
-            return $response;            
-            
+            return $response;
      }
 
 

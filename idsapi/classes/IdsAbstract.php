@@ -12,13 +12,7 @@ abstract class IdsAbstract {
     /**
      * set IDS API constants.
      */
-    
-    const IDS_API_URL = 'http://api.ids.ac.uk/openapi/';
-    const IDS_API_HOME_URL = 'http://api.ids.ac.uk/';    
-    const IDS_API_KEY_URL = 'http://api.ids.ac.uk/accounts/register/';
-    const IDS_API_DOCUMENTATION_URL = 'http://api.ids.ac.uk/docs/';
-    const IDS_API = ''; 
-    const IDS_DEFAULT_DATASET = 'eldis';
+       
     const IDS_API_KEY_PAR = '_token_guid';
     const IDS_DEFAULT_FORMAT = 'full';
     const IDS_DEFAULT_TYPE_REQUEST = 'search';

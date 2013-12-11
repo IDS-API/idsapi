@@ -35,9 +35,16 @@ class action_plugin_idsapi extends DokuWiki_Action_Plugin {
      * @param array      $param optional parameters (unused)
      */
     function _handle_tpl_act(Doku_Event &$event, $param) {  
-        
+
+         // check the ids api url
+           $url = $this->getConf('ids_api_url');
+           if ($url==false || $url=='') {
+               msg($this->getLang('missing_idsapiurl'), -1);
+               $this->_handle_home();
+               return;
+           } 
          // check the ids api key
-           $key = $this->getConf('ids_api');
+           $key = $this->getConf('ids_api_key');
            if ($key==false || $key=='') {
                msg($this->getLang('missing_idsapikey'), -1);
                $this->_handle_home();
@@ -52,7 +59,7 @@ class action_plugin_idsapi extends DokuWiki_Action_Plugin {
             }
 
           // load the ids service Facade
-            $idshelper = IdsHelperFacade::getHelper( $_REQUEST, $_SERVER, $key ); 
+            $idshelper = IdsHelperFacade::getHelper( $_REQUEST, $_SERVER, $url, $key, $this->getConf('ids_api_dataset')); 
             $response = $idshelper->getResponse();
             if($response->hasErrors()){
                 msg($this->getLang('ids_error_connection'), -1);
@@ -71,7 +78,7 @@ class action_plugin_idsapi extends DokuWiki_Action_Plugin {
      */
     function _handle_home() {
             $idshome = $this->getConf('ids_api_home_url');
-            print "<p style='text-align:right;'><a href='$idshome' target='_blank'>$idshome</a><br>";
+            print "<p style='text-align:right;'><a href='$idshome' target='_blank'>$idshome</a><br />";
             //print "<span style='color: grey;font-size: 0.8em;'>".$this->getConf('ids_api_author')."</span></p>";
     }  
     

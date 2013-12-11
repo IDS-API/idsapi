@@ -327,7 +327,7 @@ class IdsAPI extends IdsAbstract {
         $site = $this->getSite();
         
         if (!isset($site)) {
-            $this->setSite(parent::IDS_DEFAULT_DATASET);
+            $this->setSite($this->getConf('ids_api_dataset'));
         }
         
         $path = $this->getSite();
@@ -357,13 +357,10 @@ class IdsAPI extends IdsAbstract {
      */
     protected function buildUrl() {
 
-              
-        $this->setQueryString($this->queryString());      
-        
-        $this->setUrl(parent::IDS_API_URL);
-        
+        $this->setQueryString($this->queryString());  
+    
         $key = $this->getApiKey();
-        if(!$key){ $key = parent::IDS_API; }
+        if(!$key){ $key = $conf['ids_api_key']; }
         $this->setApiKey($key);
         
         $this->setApiKeyPar(parent::IDS_API_KEY_PAR);     
@@ -404,8 +401,7 @@ class IdsAPI extends IdsAbstract {
             
             if ($this->getSortOrder()) {
                 $url .= '&' . 'sort_desc=' . $this->getSortOrder();
-            }
-            
+            }            
         }        
       
         $this->setUrl($url);    
